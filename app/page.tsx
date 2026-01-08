@@ -28,22 +28,17 @@ export default function Home() {
         {/* Hero Section */}
         <section className="relative w-full py-24 md:py-32 lg:py-48 overflow-hidden flex flex-col items-center justify-center text-center px-4">
 
-          {/* Ethereal Light Rays Background */}
-          <div className="absolute inset-0 pointer-events-none overflow-hidden select-none">
-            {/* Ray 1 */}
+          {/* Modern Gradient Background */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden select-none -z-10">
+            <div className="absolute inset-0 bg-gradient-to-br from-indigo-100 via-white to-cyan-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 opacity-90" />
             <div
-              className="absolute top-[-50%] left-[20%] w-[200px] h-[200%] bg-gradient-to-b from-foreground/5 via-foreground/2 to-transparent rotate-[25deg] blur-3xl animate-beam-flow opacity-30 mix-blend-overlay"
-              style={{ "--beam-opacity": 0.4 } as React.CSSProperties}
+              className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150 grayscale"
             ></div>
-            {/* Ray 2 */}
             <div
-              className="absolute top-[-50%] right-[30%] w-[300px] h-[200%] bg-gradient-to-b from-foreground/5 via-foreground/1 to-transparent -rotate-[15deg] blur-3xl animate-beam-flow opacity-20 mix-blend-overlay delay-1000"
-              style={{ "--beam-opacity": 0.3, animationDuration: "20s" } as React.CSSProperties}
+              className="absolute top-[-50%] left-[-50%] right-[-50%] bottom-[-50%] bg-gradient-to-r from-indigo-300 via-purple-300 to-cyan-300 blur-3xl animate-blob rounded-full opacity-40 dark:opacity-20 will-change-transform mix-blend-multiply dark:mix-blend-normal"
             ></div>
-            {/* Ray 3 (Central Glow) */}
             <div
-              className="absolute top-[-20%] left-[50%] -translate-x-1/2 w-[600px] h-[600px] bg-foreground/5 blur-[100px] rounded-full opacity-20 animate-pulse"
-              style={{ animationDuration: "8s" }}
+              className="absolute top-[-50%] left-[-50%] right-[-50%] bottom-[-50%] bg-gradient-to-r from-cyan-300 via-blue-300 to-indigo-300 blur-3xl animate-blob rounded-full opacity-40 dark:opacity-20 will-change-transform animation-delay-2000 mix-blend-multiply dark:mix-blend-normal"
             ></div>
           </div>
 
@@ -146,7 +141,9 @@ export default function Home() {
       <footer className="w-full py-8 border-t border-border/40 bg-background">
         <div className="container px-4 md:px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
           <div className="space-y-1 text-center md:text-left">
-            <p className="font-serif text-foreground">HealthScript Pro</p>
+            <p className="font-serif text-foreground flex items-center">
+              HealthScript <span className="ml-1 bg-primary text-primary-foreground px-1 py-px rounded text-[10px] font-bold tracking-wider uppercase">Pro</span>
+            </p>
             <p>Released under the MIT License.</p>
           </div>
           <nav className="flex gap-6">

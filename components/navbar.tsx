@@ -13,9 +13,8 @@ export function Navbar() {
     return (
         <header className="sticky top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border/40">
             <div className="container px-4 md:px-6 h-16 flex items-center justify-between">
-                {/* Logo */}
                 <Link className="flex items-center justify-center font-serif text-xl tracking-tight font-medium" href="#">
-                    HealthScript Pro
+                    HealthScript <span className="ml-1 bg-primary text-primary-foreground px-1.5 py-0.5 rounded text-xs font-bold tracking-wider">PRO</span>
                 </Link>
 
                 {/* Desktop Nav */}
@@ -56,42 +55,44 @@ export function Navbar() {
             </div>
 
             {/* Mobile Menu Overlay */}
-            {isOpen && (
-                <div className="md:hidden absolute top-16 left-0 w-full bg-background border-b border-border/40 p-4 flex flex-col gap-4 animate-in slide-in-from-top-4 duration-200 shadow-xl">
-                    <nav className="flex flex-col gap-4">
-                        <Link
-                            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors p-2"
-                            href="#features"
-                            onClick={() => setIsOpen(false)}
-                        >
-                            Features
-                        </Link>
-                        <Link
-                            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors p-2"
-                            href="#workflow"
-                            onClick={() => setIsOpen(false)}
-                        >
-                            How it Works
-                        </Link>
-                        <Link
-                            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors p-2"
-                            href="https://github.com/akhilthirunalveli/HealthScript-Pro"
-                            target="_blank"
-                            onClick={() => setIsOpen(false)}
-                        >
-                            GitHub
-                        </Link>
-                    </nav>
-                    <div className="flex flex-col gap-2 mt-2">
-                        <Button variant="ghost" size="lg" asChild className="w-full justify-start">
-                            <Link href="/login">Sign In</Link>
-                        </Button>
-                        <Button variant="outline" size="lg" className="w-full rounded-full border-foreground/20 hover:bg-foreground hover:text-background transition-all" asChild>
-                            <Link href="/dashboard">Get Started</Link>
-                        </Button>
+            {
+                isOpen && (
+                    <div className="md:hidden absolute top-16 left-0 w-full bg-background border-b border-border/40 p-4 flex flex-col gap-4 animate-in slide-in-from-top-4 duration-200 shadow-xl">
+                        <nav className="flex flex-col gap-4">
+                            <Link
+                                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors p-2"
+                                href="#features"
+                                onClick={() => setIsOpen(false)}
+                            >
+                                Features
+                            </Link>
+                            <Link
+                                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors p-2"
+                                href="#workflow"
+                                onClick={() => setIsOpen(false)}
+                            >
+                                How it Works
+                            </Link>
+                            <Link
+                                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors p-2"
+                                href="https://github.com/akhilthirunalveli/HealthScript-Pro"
+                                target="_blank"
+                                onClick={() => setIsOpen(false)}
+                            >
+                                GitHub
+                            </Link>
+                        </nav>
+                        <div className="flex flex-col gap-2 mt-2">
+                            <Button variant="ghost" size="lg" asChild className="w-full justify-start">
+                                <Link href="/login">Sign In</Link>
+                            </Button>
+                            <Button variant="outline" size="lg" className="w-full rounded-full border-foreground/20 hover:bg-foreground hover:text-background transition-all" asChild>
+                                <Link href="/dashboard">Get Started</Link>
+                            </Button>
+                        </div>
                     </div>
-                </div>
-            )}
-        </header>
+                )
+            }
+        </header >
     );
 }
