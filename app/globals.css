@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
+  --color-soft-teal: var(--soft-teal);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-breathe: breathe 4s ease-in-out infinite;
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes breathe {
+
+    0%,
+    100% {
+      transform: scale(1);
+    }
+
+    50% {
+      transform: scale(1.05);
+    }
+  }
+}
+
+:root {
+  /* Organic/Fluid Palette */
+  --background: #FDFCF8;
+  /* Soft Off-White */
+  --foreground: #1A1A1A;
+  /* Deep Charcoal for text */
+  --primary: #2A9D8F;
+  /* Deep Teal - Trust/Medical but warm */
+  --secondary: #E9F5F2;
+  /* Sage Green - Backgrounds/Soft elements */
+  --accent: #E76F51;
+  /* Warm Coral - Calls to Action */
+  --muted: #64748B;
+  /* Muted Slate - Secondary text */
+  --soft-teal: #d5ebe9;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #050a15;
+    /* Deep Navy - Night mode alternative to black */
+    --foreground: #F8FAFC;
+    --primary: #3493b0;
+    /* Bright Blue/Teal for dark mode contrast */
+    --secondary: #1E293B;
+    --accent: #F4A261;
+    /* Soft Orange */
+    --muted: #94A3B8;
+    --soft-teal: #1e3a3a;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  /* Prevent horizontal scroll from organic shapes */
+}
+
+/* Custom Utilities for Organic Shapes */
+.blob-shape {
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+}
